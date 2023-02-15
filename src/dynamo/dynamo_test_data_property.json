@@ -1,0 +1,330 @@
+[
+    {
+        "PK": {
+            "S": "Property"
+        },
+        "SK": {
+            "S": "462 Shekel Ln##80424"
+        },
+        "above_grade": {
+            "N": "2742"
+        },
+        "finished_basement_sqft": {
+            "N": "0"
+        },
+        "list_price": {
+            "N": "899000"
+        },
+        "main_sqft": {
+            "N": "2000"
+        },
+        "num_baths": {
+            "N": "2.5"
+        },
+        "num_beds": {
+            "N": "4"
+        },
+        "sale_price": {
+            "N": "899000"
+        },
+        "total_sqft": {
+            "N": "2742"
+        },
+        "unfinished_basement_sqft": {
+            "N": "0"
+        },
+        "upper_sqft": {
+            "N": "742"
+        },
+        "UUID": {
+            "S": "96bc1146-6216-4439-9c4a-63c369212a51"
+        }
+    },
+    {
+        "PK": {
+            "S": "Property"
+        },
+        "SK": {
+            "S": "652 Silver Circle##80424"
+        },
+        "above_grade": {
+            "N": "2492"
+        },
+        "finished_basement_sqft": {
+            "N": "0"
+        },
+        "list_price": {
+            "N": "729000"
+        },
+        "main_sqft": {
+            "N": "1900"
+        },
+        "num_baths": {
+            "N": "2"
+        },
+        "num_beds": {
+            "N": "3"
+        },
+        "sale_price": {
+            "N": "712000"
+        },
+        "total_sqft": {
+            "N": "2492"
+        },
+        "unfinished_basement_sqft": {
+            "N": "0"
+        },
+        "upper_sqft": {
+            "N": "592"
+        },
+        "UUID": {
+            "S": "a370290c-2f02-4dcd-a574-dec6d4f71aba"
+        }
+    },
+    {
+        "PK": {
+            "S": "Property"
+        },
+        "SK": {
+            "S": "245 Timberline Cir##80424"
+        },
+        "above_grade": {
+            "N": "2000"
+        },
+        "finished_basement_sqft": {
+            "N": "326"
+        },
+        "list_price": {
+            "N": "799000"
+        },
+        "main_sqft": {
+            "N": "1500"
+        },
+        "num_baths": {
+            "N": "3"
+        },
+        "num_beds": {
+            "N": "5"
+        },
+        "sale_price": {
+            "N": "770000"
+        },
+        "total_sqft": {
+            "N": "2326"
+        },
+        "unfinished_basement_sqft": {
+            "N": "0"
+        },
+        "upper_sqft": {
+            "N": "500"
+        },
+        "UUID": {
+            "S": "7ffa053a-dbc9-4cca-9fe3-dbcf14cedde9"
+        }
+    },
+    {
+        "PK": {
+            "S": "Property"
+        },
+        "SK": {
+            "S": "627 Broken Lance Dr##80424"
+        },
+        "above_grade": {
+            "N": "2392"
+        },
+        "finished_basement_sqft": {
+            "N": "0"
+        },
+        "list_price": {
+            "N": "839000"
+        },
+        "main_sqft": {
+            "N": "1500"
+        },
+        "num_baths": {
+            "N": "3.5"
+        },
+        "num_beds": {
+            "N": "5"
+        },
+        "sale_price": {
+            "N": "802500"
+        },
+        "total_sqft": {
+            "N": "2592"
+        },
+        "unfinished_basement_sqft": {
+            "N": "200"
+        },
+        "upper_sqft": {
+            "N": "892"
+        },
+        "UUID": {
+            "S": "fd8d847d-7d64-4bf1-8d50-a4264d61f5e1"
+        }
+    },
+    {
+        "PK": {
+            "S": "Property"
+        },
+        "SK": {
+            "S": "133 Mountain View Dr##80424"
+        },
+        "above_grade": {
+            "N": "2321"
+        },
+        "finished_basement_sqft": {
+            "N": "0"
+        },
+        "list_price": {
+            "N": "834900"
+        },
+        "main_sqft": {
+            "N": "1200"
+        },
+        "num_baths": {
+            "N": "2.5"
+        },
+        "num_beds": {
+            "N": "4"
+        },
+        "sale_price": {
+            "N": "810000"
+        },
+        "total_sqft": {
+            "N": "2321"
+        },
+        "unfinished_basement_sqft": {
+            "N": "0"
+        },
+        "upper_sqft": {
+            "N": "1121"
+        },
+        "UUID": {
+            "S": "63793cd5-18fe-4d2e-a5c4-f9a318eef56f"
+        }
+    },
+    {
+        "PK": {
+            "S": "Property"
+        },
+        "SK": {
+            "S": "222 Silver Cir##80424"
+        },
+        "above_grade": {
+            "N": "2452"
+        },
+        "finished_basement_sqft": {
+            "N": "0"
+        },
+        "list_price": {
+            "N": "834900"
+        },
+        "main_sqft": {
+            "N": "2000"
+        },
+        "num_baths": {
+            "N": "2.5"
+        },
+        "num_beds": {
+            "N": "4"
+        },
+        "sale_price": {
+            "N": "822000"
+        },
+        "total_sqft": {
+            "N": "2452"
+        },
+        "unfinished_basement_sqft": {
+            "N": "0"
+        },
+        "upper_sqft": {
+            "N": "2000"
+        },
+        "UUID": {
+            "S": "2c1ba9a2-7bd4-47f3-9cd2-4572a53f3508"
+        }
+    },
+    {
+        "PK": {
+            "S": "Property"
+        },
+        "SK": {
+            "S": "17 Meadow Lark Green##80424"
+        },
+        "above_grade": {
+            "N": "2572"
+        },
+        "finished_basement_sqft": {
+            "N": "0"
+        },
+        "list_price": {
+            "N": "974900"
+        },
+        "main_sqft": {
+            "N": "1600"
+        },
+        "num_baths": {
+            "N": "4"
+        },
+        "num_beds": {
+            "N": "5"
+        },
+        "sale_price": {
+            "N": "925000"
+        },
+        "total_sqft": {
+            "N": "2572"
+        },
+        "unfinished_basement_sqft": {
+            "N": "0"
+        },
+        "upper_sqft": {
+            "N": "972"
+        },
+        "UUID": {
+            "S": "9f4159c7-ab5a-4b5d-acea-919495506c5d"
+        }
+    },
+    {
+        "PK": {
+            "S": "Property"
+        },
+        "SK": {
+            "S": "5 Bonanza Trail##80424"
+        },
+        "above_grade": {
+            "N": "2039"
+        },
+        "finished_basement_sqft": {
+            "N": "0"
+        },
+        "list_price": {
+            "N": "1089000"
+        },
+        "main_sqft": {
+            "N": "2000"
+        },
+        "num_baths": {
+            "N": "3"
+        },
+        "num_beds": {
+            "N": "4"
+        },
+        "sale_price": {
+            "N": "1056500"
+        },
+        "total_sqft": {
+            "N": "2039"
+        },
+        "unfinished_basement_sqft": {
+            "N": "0"
+        },
+        "upper_sqft": {
+            "N": "742"
+        },
+        "UUID": {
+            "S": "09397197-f314-47bd-8a51-aad444fc6db6"
+        }
+    }
+]

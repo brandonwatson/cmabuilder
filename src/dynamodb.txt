@@ -9,5 +9,5 @@ Access Pattern 1 - Property Data
 
 Access Patter 2 - CMA Analysis
     PK: "CMA"
-    SK: "created_by#add1"
-    Attributes: LIST[property], LIST[comparables]
+    SK: "created_by"
+    Attributes: name, client_name, LIST[property], LIST[comparables]

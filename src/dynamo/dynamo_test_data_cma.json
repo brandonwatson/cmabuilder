@@ -1,0 +1,30 @@
+{
+    "PK": {
+        "S": "CMA"
+    },
+    "SK": {
+        "S": "blwatson@gmail.com"
+    },
+    "name": {
+        "S": "462 Shekel Ln"
+    },
+    "client_name": {
+        "S": "Lawson"
+    },
+    "property": {
+        "SS": [
+            "462 Shekel Ln##80424"
+        ]
+    },
+    "comparables": {
+        "SS": [
+            "652 Silver Circle##80424",
+            "245 Timberline Cir##80424",
+            "627 Broken Lance Dr##80424",
+            "133 Mountain View Dr##80424",
+            "222 Silver Cir##80424",
+            "17 Meadow Lark Green##80424",
+            "5 Bonanza Trail##80424"
+        ]
+    }
+}

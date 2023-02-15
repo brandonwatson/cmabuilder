@@ -3,17 +3,15 @@ import { withAuthenticator, Button, Heading } from '@aws-amplify/ui-react'
 
 function home({signOut, user}) {
     return (
-        <div>
-        This is my react app
-        <div>
-            <Heading level={1}>Hello {user.attributes.email}</Heading>
-            <Button onClick={signOut}>Sign out</Button>
-            <h2>Amplify Todos</h2>
-            <ul>
-            <li>fuck me</li>
-            </ul>
-        </div>
-        </div>
+    <div>
+        <Heading level={3}>Hello {user.attributes.email}</Heading>
+        <Button onClick={signOut}>Sign out</Button>
+        <h2>Amplify Todos</h2>
+        <ul>
+            <li><b>Install Material UI in npm</b>: run the npm commands</li>
+            <li><b>Create New CMA functionality</b>: new template, list of existing CMAs owned by an account, delete an existing CMA</li>
+        </ul>
+    </div>
     )
 }
 
