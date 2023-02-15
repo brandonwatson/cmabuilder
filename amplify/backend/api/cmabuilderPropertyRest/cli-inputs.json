@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "paths": {
+    "/property/{key}": {
+      "name": "/property/{key}",
+      "lambdaFunction": "cmabuilderPropertyRest",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    }
+  }
+}

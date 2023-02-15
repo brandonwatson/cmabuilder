@@ -1,21 +1,26 @@
 import './App.css'
 import { withAuthenticator, Button, Heading } from '@aws-amplify/ui-react'
+import { Routes, Route } from 'react-router-dom'
+import Home from './pages/home'
+import Search from './pages/search'
+import About from './pages/about'
+import NoMatch from './pages/nomatch'
+import NavBar from './components/NavBar'
+
 import '@aws-amplify/ui-react/styles.css'
 
 function App({signOut, user}) {
   return (
-    <div className="App">
-      This is my react app
-      <div style={styles.container}>
-        <Heading level={1}>Hello {user.attributes.email}</Heading>
-        <Button onClick={signOut}>Sign out</Button>
-        <h2>Amplify Todos</h2>
-        <ul>
-          <li>fuck me</li>
-        </ul>
-      </div>
-    </div>
-  )
+    <>
+      <NavBar/>
+      <Routes>
+        <Route path="/" element={<Home  user={user} signOut={signOut}/>} />
+        <Route path="/search" element={<Search user={user} signOut={signOut}/>} />
+        <Route path="/about" element={<About user={user} signOut={signOut}/>} />
+        <Route path="*" element={<NoMatch user={user} signOut={signOut}/>} />  {/*TODO: Implement*/}
+      </Routes>
+    </>
+    )
 }
 
 const styles = {

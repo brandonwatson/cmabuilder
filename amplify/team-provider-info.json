@@ -9,11 +9,37 @@
       "UnauthRoleName": "amplify-cmabuilder-dev-103708-unauthRole",
       "StackName": "amplify-cmabuilder-dev-103708",
       "StackId": "arn:aws:cloudformation:us-west-1:516790109170:stack/amplify-cmabuilder-dev-103708/5fabfba0-ad57-11ed-abfe-0205b03e3a9b",
-      "AmplifyAppId": "d5525rthdxaqq"
+      "AmplifyAppId": "d5525rthdxaqq",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-cmabuilder-dev-103708-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
       "auth": {
         "cmabuilderda9f7bb4": {}
+      },
+      "storage": {
+        "cmabuilderdev": {
+          "tableName": "cmabuilder-dev",
+          "region": "us-west-1",
+          "arn": "arn:aws:dynamodb:us-west-1:516790109170:table/cmabuilder-dev",
+          "partitionKeyName": "PK",
+          "partitionKeyType": "S",
+          "sortKeyName": "SK",
+          "sortKeyType": "S"
+        }
+      },
+      "function": {
+        "cmabuilderPropertyRest": {
+          "deploymentBucketName": "amplify-cmabuilder-dev-103708-deployment",
+          "s3Key": "amplify-builds/cmabuilderPropertyRest-357955494448496d6c55-build.zip"
+        },
+        "cmabuilderCMARest": {
+          "deploymentBucketName": "amplify-cmabuilder-dev-103708-deployment",
+          "s3Key": "amplify-builds/cmabuilderCMARest-704b496d6b4761734364-build.zip"
+        }
+      },
+      "api": {
+        "cmabuilderPropertyRest": {},
+        "cmabuilderCMARest": {}
       }
     }
   }

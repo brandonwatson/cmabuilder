@@ -1,0 +1,13 @@
+Single Table Design
+Access Pattern 1 - Property Data
+    PK: "Property"
+    SK: "add1#add2#zip" <- add1 == Address Line 1, add2 == Address Line 2, zip == Zip Code
+    Attributes: num_beds, num_bath, total_sqft, above_grade_sqft,
+                upper_sqft, main_sqft, finished_basement_sqft, unfinished_basement_sqft,
+                list_price, sale_price (in the case of a target property the sale price is really the offer price),
+                last_updated, last_edit_by, UUID
+
+Access Patter 2 - CMA Analysis
+    PK: "CMA"
+    SK: "created_by#add1"
+    Attributes: LIST[property], LIST[comparables]

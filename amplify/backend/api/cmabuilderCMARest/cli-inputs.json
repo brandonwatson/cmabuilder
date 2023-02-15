@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "paths": {
+    "/cma/{key}": {
+      "name": "/cma/{key}",
+      "lambdaFunction": "cmabuilderCMARest",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    }
+  }
+}

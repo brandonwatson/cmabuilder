@@ -1,4 +1,34 @@
 {
+  "api": {
+    "cmabuilderCMARest": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "cmabuilderCMARest"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    },
+    "cmabuilderPropertyRest": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "cmabuilderPropertyRest"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
   "auth": {
     "cmabuilderda9f7bb4": {
       "customAuth": false,
@@ -25,6 +55,144 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
+    }
+  },
+  "function": {
+    "cmabuilderCMARest": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributeEnvMap": {
+            "Arn": "TABLE_ARN",
+            "Name": "TABLE_NAME"
+          },
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "storage",
+          "resourceName": "cmabuilderdev"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "cmabuilderPropertyRest": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributeEnvMap": {
+            "Arn": "TABLE_ARN",
+            "Name": "TABLE_NAME"
+          },
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "storage",
+          "resourceName": "cmabuilderdev"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_cmabuilderCMARest_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "cmabuilderCMARest"
+        }
+      ]
+    },
+    "AMPLIFY_function_cmabuilderCMARest_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "cmabuilderCMARest"
+        }
+      ]
+    },
+    "AMPLIFY_function_cmabuilderPropertyRest_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "cmabuilderPropertyRest"
+        }
+      ]
+    },
+    "AMPLIFY_function_cmabuilderPropertyRest_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "cmabuilderPropertyRest"
+        }
+      ]
+    },
+    "AMPLIFY_storage_cmabuilderdev_arn": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "cmabuilderdev"
+        }
+      ]
+    },
+    "AMPLIFY_storage_cmabuilderdev_partitionKeyName": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "cmabuilderdev"
+        }
+      ]
+    },
+    "AMPLIFY_storage_cmabuilderdev_partitionKeyType": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "cmabuilderdev"
+        }
+      ]
+    },
+    "AMPLIFY_storage_cmabuilderdev_region": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "cmabuilderdev"
+        }
+      ]
+    },
+    "AMPLIFY_storage_cmabuilderdev_sortKeyName": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "cmabuilderdev"
+        }
+      ]
+    },
+    "AMPLIFY_storage_cmabuilderdev_sortKeyType": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "cmabuilderdev"
+        }
+      ]
+    },
+    "AMPLIFY_storage_cmabuilderdev_tableName": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "cmabuilderdev"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "cmabuilderdev": {
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB",
+      "serviceType": "imported"
     }
   }
 }
