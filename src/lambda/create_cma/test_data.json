@@ -1,0 +1,280 @@
+{
+    "headers":
+    {
+        "0": "Address",
+        "1": "Total SqFt",
+        "2": "Above Grade",
+        "3": "Upper SqFt",
+        "4": "Main SqFt",
+        "5": "Finished Basement",
+        "6": "Unfinished Basement",
+        "7": "Effective SqFt",
+        "8": "List Price",
+        "9": "Sale Price"
+    },
+    "anchors" :
+    {
+        "listing": {
+            "row": 4,
+            "col": 1,
+            "formulas inserted": 0,
+            "propertytype": "listing"
+        },
+        "comparables": {
+            "row": 12,
+            "col": 1,
+            "formulas inserted": 0,
+            "propertytype": "comparables"
+        },
+        "comparisons": {
+            "row": 1,
+            "row buffer": 1,
+            "col buffer": 1
+        }
+    },
+    "listing":
+    [
+        {
+        "Address" : "462 Shekel",
+        "Total SqFt" : 2742,
+        "Above Grade" : 2742,
+        "Upper SqFt": 742, 
+        "Main SqFt": 2000,
+        "Finished Basement" : 0,
+        "Unfinished Basement": 0,
+        "Effective SqFt": 2742,
+        "List Price" : 899000,
+        "Sale Price": 899000
+        }
+    ],
+    "comparables":
+    [
+        {
+            "Address" : "652 Silver Circle",
+            "Total SqFt" : 2492,
+            "Above Grade" : 2492, 
+            "Upper SqFt": 592, 
+            "Main SqFt": 1900,
+            "Finished Basement" : 0,
+            "Unfinished Basement": 0,
+            "Effective SqFt": 2442,
+            "Sale Price" : 712000,
+            "List Price" : 729000
+        }, 
+        {
+            "Address" : "245 Timberline Cir",
+            "Total SqFt" : 2326,
+            "Above Grade" : 2000, 
+            "Upper SqFt": 500, 
+            "Main SqFt": 1500,
+            "Finished Basement" : 326,
+            "Unfinished Basement": 0,
+            "Effective SqFt": 2213,
+            "Sale Price" : 770000,
+            "List Price" : 799000
+        }, 
+        {
+            "Address" : "627 Broken Lance Dr",
+            "Total SqFt" : 2592,
+            "Above Grade" : 2392, 
+            "Upper SqFt": 892, 
+            "Main SqFt": 1500,
+            "Finished Basement" : 0,
+            "Unfinished Basement": 200,
+            "Effective SqFt": 2442,
+            "Sale Price" : 802500,
+            "List Price" : 839000
+        }, 
+        {
+            "Address" : "133 Mountain View Dr",
+            "Total SqFt" : 2321,
+            "Above Grade" : 2321, 
+            "Upper SqFt": 1121, 
+            "Main SqFt": 1200,
+            "Finished Basement": 0,
+            "Unfinished Basement": 0,
+            "Effective SqFt": 2321,
+            "Sale Price" : 810000,
+            "List Price" : 834900
+        }, 
+        {
+            "Address" : "222 Silver Cir",
+            "Total SqFt" : 2452,
+            "Above Grade" : 2452, 
+            "Upper SqFt": 452, 
+            "Main SqFt": 2000,
+            "Finished Basement" : 0,
+            "Unfinished Basement": 0,
+            "Effective SqFt": 2452,
+            "Sale Price" : 822000,
+            "List Price" : 834900
+        }, 
+        {
+            "Address" : "17 Meadow Lark Green",
+            "Total SqFt" : 2572,
+            "Above Grade" : 2572, 
+            "Upper SqFt": 972, 
+            "Main SqFt": 1600,
+            "Finished Basement" : 0,
+            "Unfinished Basement": 0,
+            "Effective SqFt": 2572,
+            "Sale Price" : 925000,
+            "List Price" : 974900
+        },
+        {
+            "Address" : "5 Bonanza Trail",
+            "Total SqFt" : 2039,
+            "Above Grade" : 2039, 
+            "Upper SqFt": 742, 
+            "Main SqFt": 2000,
+            "Finished Basement" : 0,
+            "Unfinished Basement": 0,
+            "Effective SqFt": 2742,
+            "Sale Price" : 1056500,
+            "List Price" : 1089000
+        }
+    ],
+    "formats":
+    {
+        "property":
+        {
+            "Address": "data string",
+            "Total SqFt" : "data number",
+            "Above Grade": "data number",
+            "Upper SqFt": "data number",
+            "Main SqFt": "data number",
+            "Finished Basement": "data number",
+            "Unfinished Basement": "data number",
+            "Effective SqFt": "data number",
+            "List Price": "data dollar",
+            "Sale Price": "data dollar",
+            "Percent of List": "data percent",
+            "Dollars SqFt": "data dollar sqft",
+            "Dollars Above Grade": "data dollar sqft",
+            "Dollars Effective Grade": "data dollar sqft"
+        },
+        "comparisons":
+        {
+            "Implied Price Comps": "data dollar",
+            "Implied Dollar SqFt Offer Price": "data dollar sqft",
+            "Dollar Diff SqFt": "data dollar sqft",
+            "Percent Diff SqFt": "data percent"
+        }
+    },
+    "style data": 
+    {
+        "header": 
+        {
+            "font name": "Calibri",
+            "font size": 12,
+            "font bold" : true,
+            "format": "General"
+        },
+        "data number" : 
+        {
+            "font name": "Calibri",
+            "font size": 10,
+            "font bold" : false,
+            "format": "#,##0_);(#,##0)"
+        },
+        "data percent" : 
+        {
+            "font name": "Calibri",
+            "font size": 10,
+            "font bold" : false,
+            "format": "0.0%"
+        },
+        "data dollar" : 
+        {
+            "font name": "Calibri",
+            "font size": 10,
+            "font bold" : false,
+            "format": "_($* #,##0_);_($* (#,##0);_($* \"-\"??_);_(@_)"
+        },
+        "data string":
+        {
+            "font name": "Calibri",
+            "font size": 10,
+            "font bold" : false,
+            "format": "General"
+        },
+        "data dollar sqft":
+        {
+            "font name": "Calibri",
+            "font size": 10,
+            "font bold" : false,
+            "format": "_($* #,##0.00_);_($* (#,##0.00);_($* \"-\"??_);_(@_)"
+        }
+    },
+    "property calculations": 
+    {
+        "Percent of List":
+        {
+            "label": "% of List",
+            "numerator": "Sale Price",
+            "denominator": "List Price",
+            "formula": "=${0}${1} / ${2}${3}"
+        },
+        "Dollars SqFt":
+        {
+            "label": "$ / SqFt",
+            "numerator": "Sale Price",
+            "denominator": "Total SqFt",
+            "formula": "=${0}${1} / ${2}${3}"
+        },
+        "Dollars Above Grade":
+        {
+            "label": "$ / Above Grade SqFt",
+            "numerator": "Sale Price",
+            "denominator": "Above Grade",
+            "formula": "=${0}${1} / ${2}${3}"
+        },
+        "Dollars Effective Grade":
+        {
+            "label": "$ / by Effective SqFt",
+            "numerator": "Sale Price",
+            "denominator": "Effective SqFt",
+            "formula": "=${0}${1} / ${2}${3}"
+        }
+    },
+    "comparison table":
+    {
+        "tables" :
+        {
+            "all properties":
+            {
+                "formulas": 
+                {
+                    "drop minimum": false,
+                    "drop maximum": false
+                }
+            },
+            "drop hi low":
+            {
+                "formulas": 
+                {
+                    "drop minimum": true,
+                    "drop maximum": true
+                }
+            },
+            "drop hi only":
+            {
+                "formulas": 
+                {
+                    "drop minimum": false,
+                    "drop maximum": true
+                }
+            }
+        },
+        "sqft use":
+        {
+            "total sqft": "Total SqFt",
+            "above grade": "Above Grade",
+            "effective grade": "Effective SqFt"
+        }
+    },
+    "doc metadata" : {
+        "realtor name": "Christy Watson Homes",
+        "generated by": "Loving Husband LLC"
+    }
+}
