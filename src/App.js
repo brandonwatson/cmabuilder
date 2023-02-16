@@ -1,23 +1,30 @@
 import './App.css'
 import { withAuthenticator, Button, Heading } from '@aws-amplify/ui-react'
 import { Routes, Route } from 'react-router-dom'
-import Home from './pages/home'
-import Search from './pages/search'
-import About from './pages/about'
-import NoMatch from './pages/nomatch'
-import NavBar from './components/NavBar'
+import Home from './pages/Home'
+import Search from './pages/Search'
+import About from './pages/About'
+import Nomatch from './pages/Nomatch'
+import Navbar from './components/Navbar'
+
+//roboto font
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+
 
 import '@aws-amplify/ui-react/styles.css'
 
 function App({signOut, user}) {
   return (
     <>
-      <NavBar/>
+      <Navbar/>
       <Routes>
         <Route path="/" element={<Home  user={user} signOut={signOut}/>} />
         <Route path="/search" element={<Search user={user} signOut={signOut}/>} />
         <Route path="/about" element={<About user={user} signOut={signOut}/>} />
-        <Route path="*" element={<NoMatch user={user} signOut={signOut}/>} />  {/*TODO: Implement*/}
+        <Route path="*" element={<Nomatch user={user} signOut={signOut}/>} />  {/*TODO: Implement*/}
       </Routes>
     </>
     )
