@@ -1,32 +1,28 @@
 {
   "api": {
-    "cmabuilderCMARest": {
+    "cmabuilder": {
       "dependsOn": [
         {
           "attributes": [
-            "Name",
-            "Arn"
+            "UserPoolId"
           ],
-          "category": "function",
-          "resourceName": "cmabuilderCMARest"
+          "category": "auth",
+          "resourceName": "cmabuilderda9f7bb4"
         }
       ],
-      "providerPlugin": "awscloudformation",
-      "service": "API Gateway"
-    },
-    "cmabuilderPropertyRest": {
-      "dependsOn": [
-        {
-          "attributes": [
-            "Name",
-            "Arn"
-          ],
-          "category": "function",
-          "resourceName": "cmabuilderPropertyRest"
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [],
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authcmabuilderda9f7bb4"
+            }
+          }
         }
-      ],
+      },
       "providerPlugin": "awscloudformation",
-      "service": "API Gateway"
+      "service": "AppSync"
     }
   },
   "auth": {

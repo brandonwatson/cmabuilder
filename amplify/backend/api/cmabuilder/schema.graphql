@@ -1,0 +1,52 @@
+# This "input" configures a global authorization rule to enable public access to
+# all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
+input AMPLIFY {
+	globalAuthRule: AuthRule = { allow: public }
+} # FOR TESTING ONLY!
+type Property
+	@model
+	@auth(
+		rules: [
+			{
+				allow: groups
+				groups: ["Admins"]
+				operations: [create, update, read, delete]
+			}
+			{ allow: groups, groups: ["Users"], operations: [read] }
+			{ allow: owner }
+		]
+	) {
+	pk: String! #pk will always be "Property"
+	sk: String! #sk will be made up of "add1#add2#zip"
+	num_beds: Float
+	num_bath: Float
+	total_sqft: Int
+	above_grade_sqft: Int
+	upper_sqft: Int
+	main_sqft: Int
+	fininshed_basement_sqft: Int
+	unfininshed_basement_sqft: Int
+	list_price: Int
+	sale_price: Int
+	id: ID!
+}
+
+type CMA
+	@model
+	@auth(
+		rules: [
+			{
+				allow: groups
+				groups: ["Admins"]
+				operations: [create, update, read, delete]
+			}
+			{ allow: owner }
+		]
+	) {
+	pk: String! #pk will always be "CMA"
+	sk: String! #sk will be composed of created_by (user email since we use email for login)
+	cma_label: String
+	client_name: String
+	properties: [Property]
+	comparables: [Property]
+}
