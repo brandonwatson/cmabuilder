@@ -25,6 +25,10 @@ export const createProperty = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      cMAPropertiesPk
+      cMAPropertiesSk
+      cMAComparablesPk
+      cMAComparablesSk
       owner
     }
   }
@@ -53,6 +57,10 @@ export const updateProperty = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      cMAPropertiesPk
+      cMAPropertiesSk
+      cMAComparablesPk
+      cMAComparablesSk
       owner
     }
   }
@@ -81,6 +89,10 @@ export const deleteProperty = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      cMAPropertiesPk
+      cMAPropertiesSk
+      cMAComparablesPk
+      cMAComparablesSk
       owner
     }
   }
@@ -96,48 +108,63 @@ export const createCMA = /* GraphQL */ `
       cma_label
       client_name
       properties {
-        pk
-        sk
-        num_beds
-        num_bath
-        total_sqft
-        above_grade_sqft
-        upper_sqft
-        main_sqft
-        fininshed_basement_sqft
-        unfininshed_basement_sqft
-        list_price
-        sale_price
-        id
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        owner
+        items {
+          pk
+          sk
+          num_beds
+          num_bath
+          total_sqft
+          above_grade_sqft
+          upper_sqft
+          main_sqft
+          fininshed_basement_sqft
+          unfininshed_basement_sqft
+          list_price
+          sale_price
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          cMAPropertiesPk
+          cMAPropertiesSk
+          cMAComparablesPk
+          cMAComparablesSk
+          owner
+        }
+        nextToken
+        startedAt
       }
       comparables {
-        pk
-        sk
-        num_beds
-        num_bath
-        total_sqft
-        above_grade_sqft
-        upper_sqft
-        main_sqft
-        fininshed_basement_sqft
-        unfininshed_basement_sqft
-        list_price
-        sale_price
-        id
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        owner
+        items {
+          pk
+          sk
+          num_beds
+          num_bath
+          total_sqft
+          above_grade_sqft
+          upper_sqft
+          main_sqft
+          fininshed_basement_sqft
+          unfininshed_basement_sqft
+          list_price
+          sale_price
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          cMAPropertiesPk
+          cMAPropertiesSk
+          cMAComparablesPk
+          cMAComparablesSk
+          owner
+        }
+        nextToken
+        startedAt
       }
-      id
       createdAt
       updatedAt
       _version
@@ -158,48 +185,63 @@ export const updateCMA = /* GraphQL */ `
       cma_label
       client_name
       properties {
-        pk
-        sk
-        num_beds
-        num_bath
-        total_sqft
-        above_grade_sqft
-        upper_sqft
-        main_sqft
-        fininshed_basement_sqft
-        unfininshed_basement_sqft
-        list_price
-        sale_price
-        id
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        owner
+        items {
+          pk
+          sk
+          num_beds
+          num_bath
+          total_sqft
+          above_grade_sqft
+          upper_sqft
+          main_sqft
+          fininshed_basement_sqft
+          unfininshed_basement_sqft
+          list_price
+          sale_price
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          cMAPropertiesPk
+          cMAPropertiesSk
+          cMAComparablesPk
+          cMAComparablesSk
+          owner
+        }
+        nextToken
+        startedAt
       }
       comparables {
-        pk
-        sk
-        num_beds
-        num_bath
-        total_sqft
-        above_grade_sqft
-        upper_sqft
-        main_sqft
-        fininshed_basement_sqft
-        unfininshed_basement_sqft
-        list_price
-        sale_price
-        id
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        owner
+        items {
+          pk
+          sk
+          num_beds
+          num_bath
+          total_sqft
+          above_grade_sqft
+          upper_sqft
+          main_sqft
+          fininshed_basement_sqft
+          unfininshed_basement_sqft
+          list_price
+          sale_price
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          cMAPropertiesPk
+          cMAPropertiesSk
+          cMAComparablesPk
+          cMAComparablesSk
+          owner
+        }
+        nextToken
+        startedAt
       }
-      id
       createdAt
       updatedAt
       _version
@@ -220,48 +262,63 @@ export const deleteCMA = /* GraphQL */ `
       cma_label
       client_name
       properties {
-        pk
-        sk
-        num_beds
-        num_bath
-        total_sqft
-        above_grade_sqft
-        upper_sqft
-        main_sqft
-        fininshed_basement_sqft
-        unfininshed_basement_sqft
-        list_price
-        sale_price
-        id
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        owner
+        items {
+          pk
+          sk
+          num_beds
+          num_bath
+          total_sqft
+          above_grade_sqft
+          upper_sqft
+          main_sqft
+          fininshed_basement_sqft
+          unfininshed_basement_sqft
+          list_price
+          sale_price
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          cMAPropertiesPk
+          cMAPropertiesSk
+          cMAComparablesPk
+          cMAComparablesSk
+          owner
+        }
+        nextToken
+        startedAt
       }
       comparables {
-        pk
-        sk
-        num_beds
-        num_bath
-        total_sqft
-        above_grade_sqft
-        upper_sqft
-        main_sqft
-        fininshed_basement_sqft
-        unfininshed_basement_sqft
-        list_price
-        sale_price
-        id
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        owner
+        items {
+          pk
+          sk
+          num_beds
+          num_bath
+          total_sqft
+          above_grade_sqft
+          upper_sqft
+          main_sqft
+          fininshed_basement_sqft
+          unfininshed_basement_sqft
+          list_price
+          sale_price
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          cMAPropertiesPk
+          cMAPropertiesSk
+          cMAComparablesPk
+          cMAComparablesSk
+          owner
+        }
+        nextToken
+        startedAt
       }
-      id
       createdAt
       updatedAt
       _version

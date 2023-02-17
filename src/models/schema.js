@@ -109,6 +109,34 @@ export const schema = {
                     "isRequired": false,
                     "attributes": [],
                     "isReadOnly": true
+                },
+                "cMAPropertiesPk": {
+                    "name": "cMAPropertiesPk",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "cMAPropertiesSk": {
+                    "name": "cMAPropertiesSk",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "cMAComparablesPk": {
+                    "name": "cMAComparablesPk",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "cMAComparablesSk": {
+                    "name": "cMAComparablesSk",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
                 }
             },
             "syncable": true,
@@ -117,6 +145,35 @@ export const schema = {
                 {
                     "type": "model",
                     "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "fields": [
+                            "pk",
+                            "sk"
+                        ]
+                    }
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "gsi-CMA.properties",
+                        "fields": [
+                            "cMAPropertiesPk",
+                            "cMAPropertiesSk"
+                        ]
+                    }
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "gsi-CMA.comparables",
+                        "fields": [
+                            "cMAComparablesPk",
+                            "cMAComparablesSk"
+                        ]
+                    }
                 },
                 {
                     "type": "auth",
@@ -167,13 +224,6 @@ export const schema = {
         "CMA": {
             "name": "CMA",
             "fields": {
-                "id": {
-                    "name": "id",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": true,
-                    "attributes": []
-                },
                 "pk": {
                     "name": "pk",
                     "isArray": false,
@@ -202,6 +252,40 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "properties": {
+                    "name": "properties",
+                    "isArray": true,
+                    "type": {
+                        "model": "Property"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": [
+                            "cMAPropertiesPk",
+                            "cMAPropertiesSk"
+                        ]
+                    }
+                },
+                "comparables": {
+                    "name": "comparables",
+                    "isArray": true,
+                    "type": {
+                        "model": "Property"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": [
+                            "cMAComparablesPk",
+                            "cMAComparablesSk"
+                        ]
+                    }
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -225,6 +309,15 @@ export const schema = {
                 {
                     "type": "model",
                     "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "fields": [
+                            "pk",
+                            "sk"
+                        ]
+                    }
                 },
                 {
                     "type": "auth",
@@ -265,5 +358,5 @@ export const schema = {
     "enums": {},
     "nonModels": {},
     "codegenVersion": "3.3.5",
-    "version": "5b53dab18276c49816872394c1117ea5"
+    "version": "66fe5209560ac2f08c1fc2a3841b8885"
 };

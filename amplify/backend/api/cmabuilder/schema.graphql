@@ -16,7 +16,7 @@ type Property
 			{ allow: owner }
 		]
 	) {
-	pk: String! #pk will always be "Property"
+	pk: String! @primaryKey(sortKeyFields: ["sk"]) #pk will always be "Property"
 	sk: String! #sk will be made up of "add1#add2#zip"
 	num_beds: Float
 	num_bath: Float
@@ -43,10 +43,10 @@ type CMA
 			{ allow: owner }
 		]
 	) {
-	pk: String! #pk will always be "CMA"
+	pk: String! @primaryKey(sortKeyFields: ["sk"]) #pk will always be "CMA"
 	sk: String! #sk will be composed of created_by (user email since we use email for login)
 	cma_label: String
 	client_name: String
-	properties: [Property]
-	comparables: [Property]
+	properties: [Property] @hasMany
+	comparables: [Property] @hasMany
 }

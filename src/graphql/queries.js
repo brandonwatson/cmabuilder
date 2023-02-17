@@ -2,8 +2,8 @@
 // this is an auto generated file. This will be overwritten
 
 export const getProperty = /* GraphQL */ `
-  query GetProperty($id: ID!) {
-    getProperty(id: $id) {
+  query GetProperty($pk: String!, $sk: String!) {
+    getProperty(pk: $pk, sk: $sk) {
       pk
       sk
       num_beds
@@ -22,17 +22,31 @@ export const getProperty = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      cMAPropertiesPk
+      cMAPropertiesSk
+      cMAComparablesPk
+      cMAComparablesSk
       owner
     }
   }
 `;
 export const listProperties = /* GraphQL */ `
   query ListProperties(
+    $pk: String
+    $sk: ModelStringKeyConditionInput
     $filter: ModelPropertyFilterInput
     $limit: Int
     $nextToken: String
+    $sortDirection: ModelSortDirection
   ) {
-    listProperties(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listProperties(
+      pk: $pk
+      sk: $sk
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      sortDirection: $sortDirection
+    ) {
       items {
         pk
         sk
@@ -52,6 +66,10 @@ export const listProperties = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        cMAPropertiesPk
+        cMAPropertiesSk
+        cMAComparablesPk
+        cMAComparablesSk
         owner
       }
       nextToken
@@ -91,6 +109,10 @@ export const syncProperties = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        cMAPropertiesPk
+        cMAPropertiesSk
+        cMAComparablesPk
+        cMAComparablesSk
         owner
       }
       nextToken
@@ -99,55 +121,70 @@ export const syncProperties = /* GraphQL */ `
   }
 `;
 export const getCMA = /* GraphQL */ `
-  query GetCMA($id: ID!) {
-    getCMA(id: $id) {
+  query GetCMA($pk: String!, $sk: String!) {
+    getCMA(pk: $pk, sk: $sk) {
       pk
       sk
       cma_label
       client_name
       properties {
-        pk
-        sk
-        num_beds
-        num_bath
-        total_sqft
-        above_grade_sqft
-        upper_sqft
-        main_sqft
-        fininshed_basement_sqft
-        unfininshed_basement_sqft
-        list_price
-        sale_price
-        id
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        owner
+        items {
+          pk
+          sk
+          num_beds
+          num_bath
+          total_sqft
+          above_grade_sqft
+          upper_sqft
+          main_sqft
+          fininshed_basement_sqft
+          unfininshed_basement_sqft
+          list_price
+          sale_price
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          cMAPropertiesPk
+          cMAPropertiesSk
+          cMAComparablesPk
+          cMAComparablesSk
+          owner
+        }
+        nextToken
+        startedAt
       }
       comparables {
-        pk
-        sk
-        num_beds
-        num_bath
-        total_sqft
-        above_grade_sqft
-        upper_sqft
-        main_sqft
-        fininshed_basement_sqft
-        unfininshed_basement_sqft
-        list_price
-        sale_price
-        id
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        owner
+        items {
+          pk
+          sk
+          num_beds
+          num_bath
+          total_sqft
+          above_grade_sqft
+          upper_sqft
+          main_sqft
+          fininshed_basement_sqft
+          unfininshed_basement_sqft
+          list_price
+          sale_price
+          id
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          cMAPropertiesPk
+          cMAPropertiesSk
+          cMAComparablesPk
+          cMAComparablesSk
+          owner
+        }
+        nextToken
+        startedAt
       }
-      id
       createdAt
       updatedAt
       _version
@@ -159,59 +196,34 @@ export const getCMA = /* GraphQL */ `
 `;
 export const listCMAS = /* GraphQL */ `
   query ListCMAS(
+    $pk: String
+    $sk: ModelStringKeyConditionInput
     $filter: ModelCMAFilterInput
     $limit: Int
     $nextToken: String
+    $sortDirection: ModelSortDirection
   ) {
-    listCMAS(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listCMAS(
+      pk: $pk
+      sk: $sk
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      sortDirection: $sortDirection
+    ) {
       items {
         pk
         sk
         cma_label
         client_name
         properties {
-          pk
-          sk
-          num_beds
-          num_bath
-          total_sqft
-          above_grade_sqft
-          upper_sqft
-          main_sqft
-          fininshed_basement_sqft
-          unfininshed_basement_sqft
-          list_price
-          sale_price
-          id
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-          owner
+          nextToken
+          startedAt
         }
         comparables {
-          pk
-          sk
-          num_beds
-          num_bath
-          total_sqft
-          above_grade_sqft
-          upper_sqft
-          main_sqft
-          fininshed_basement_sqft
-          unfininshed_basement_sqft
-          list_price
-          sale_price
-          id
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-          owner
+          nextToken
+          startedAt
         }
-        id
         createdAt
         updatedAt
         _version
@@ -243,48 +255,13 @@ export const syncCMAS = /* GraphQL */ `
         cma_label
         client_name
         properties {
-          pk
-          sk
-          num_beds
-          num_bath
-          total_sqft
-          above_grade_sqft
-          upper_sqft
-          main_sqft
-          fininshed_basement_sqft
-          unfininshed_basement_sqft
-          list_price
-          sale_price
-          id
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-          owner
+          nextToken
+          startedAt
         }
         comparables {
-          pk
-          sk
-          num_beds
-          num_bath
-          total_sqft
-          above_grade_sqft
-          upper_sqft
-          main_sqft
-          fininshed_basement_sqft
-          unfininshed_basement_sqft
-          list_price
-          sale_price
-          id
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-          owner
+          nextToken
+          startedAt
         }
-        id
         createdAt
         updatedAt
         _version

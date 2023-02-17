@@ -1,6 +1,6 @@
-import { ModelInit, MutableModel, __modelMeta__, ManagedIdentifier } from "@aws-amplify/datastore";
+import { ModelInit, MutableModel, __modelMeta__, CompositeIdentifier } from "@aws-amplify/datastore";
 // @ts-ignore
-import { LazyLoading, LazyLoadingDisabled } from "@aws-amplify/datastore";
+import { LazyLoading, LazyLoadingDisabled, AsyncCollection } from "@aws-amplify/datastore";
 
 
 
@@ -8,7 +8,7 @@ import { LazyLoading, LazyLoadingDisabled } from "@aws-amplify/datastore";
 
 type EagerProperty = {
   readonly [__modelMeta__]: {
-    identifier: ManagedIdentifier<Property, 'id'>;
+    identifier: CompositeIdentifier<Property, ['pk', 'sk']>;
     readOnlyFields: 'createdAt' | 'updatedAt';
   };
   readonly id: string;
@@ -26,11 +26,15 @@ type EagerProperty = {
   readonly sale_price?: number | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
+  readonly cMAPropertiesPk?: string | null;
+  readonly cMAPropertiesSk?: string | null;
+  readonly cMAComparablesPk?: string | null;
+  readonly cMAComparablesSk?: string | null;
 }
 
 type LazyProperty = {
   readonly [__modelMeta__]: {
-    identifier: ManagedIdentifier<Property, 'id'>;
+    identifier: CompositeIdentifier<Property, ['pk', 'sk']>;
     readOnlyFields: 'createdAt' | 'updatedAt';
   };
   readonly id: string;
@@ -48,6 +52,10 @@ type LazyProperty = {
   readonly sale_price?: number | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
+  readonly cMAPropertiesPk?: string | null;
+  readonly cMAPropertiesSk?: string | null;
+  readonly cMAComparablesPk?: string | null;
+  readonly cMAComparablesSk?: string | null;
 }
 
 export declare type Property = LazyLoading extends LazyLoadingDisabled ? EagerProperty : LazyProperty
@@ -58,28 +66,30 @@ export declare const Property: (new (init: ModelInit<Property>) => Property) & {
 
 type EagerCMA = {
   readonly [__modelMeta__]: {
-    identifier: ManagedIdentifier<CMA, 'id'>;
+    identifier: CompositeIdentifier<CMA, ['pk', 'sk']>;
     readOnlyFields: 'createdAt' | 'updatedAt';
   };
-  readonly id: string;
   readonly pk: string;
   readonly sk: string;
   readonly cma_label?: string | null;
   readonly client_name?: string | null;
+  readonly properties?: (Property | null)[] | null;
+  readonly comparables?: (Property | null)[] | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
 
 type LazyCMA = {
   readonly [__modelMeta__]: {
-    identifier: ManagedIdentifier<CMA, 'id'>;
+    identifier: CompositeIdentifier<CMA, ['pk', 'sk']>;
     readOnlyFields: 'createdAt' | 'updatedAt';
   };
-  readonly id: string;
   readonly pk: string;
   readonly sk: string;
   readonly cma_label?: string | null;
   readonly client_name?: string | null;
+  readonly properties: AsyncCollection<Property>;
+  readonly comparables: AsyncCollection<Property>;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }

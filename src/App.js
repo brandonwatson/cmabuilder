@@ -19,7 +19,7 @@ import '@aws-amplify/ui-react/styles.css'
 function App({signOut, user}) {
   return (
     <>
-      <Navbar/>
+      <Navbar signOut={signOut}/>
       <Routes>
         <Route path="/" element={<Home  user={user} signOut={signOut}/>} />
         <Route path="/search" element={<Search user={user} signOut={signOut}/>} />
