@@ -11,11 +11,33 @@ import { Button } from '@mui/material'
 
 //amplify imports
 import { DataStore } from 'aws-amplify'
+import { CMA, Property } from '../models/index'
+
+async function CreateNewCma(cma)
+{
+    await DataStore.save(
+        new CMA ({
+            pk: cma.pk,
+            sk: cma.sk
+            })
+        )
+}
 
 function Home({signOut, user}) {
     //I will need to use react query but for now just use fetch against the API
     const [cmaList, setCmaList] = useState()
 
+    function newClickHandler()
+    {
+        //This is sample data what will be removed
+        const testCma = {
+            pk: 'CMA',
+            sk: user.attributes.email + '#' + new Date()
+        }
+        CreateNewCma(testCma)
+
+        console.log(`new property created: {0}`, testCma)
+    }
     
     return (
     <Container>
@@ -25,7 +47,7 @@ function Home({signOut, user}) {
         <div>
             <Button
                 variant='contained'
-                onClick = {() => console.log("new CMA button click")}>Create New CMA</Button>
+                onClick = {newClickHandler}>Create New CMA</Button>
         </div>
         <div>
             <Typography variant='h4'>Created CMAs</Typography>

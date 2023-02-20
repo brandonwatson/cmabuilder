@@ -44,7 +44,7 @@ type CMA
 		]
 	) {
 	pk: String! @primaryKey(sortKeyFields: ["sk"]) #pk will always be "CMA"
-	sk: String! #sk will be composed of created_by (user email since we use email for login)
+	sk: String! #sk will be composed of created_by#created_at (user email since we use email for login)
 	cma_label: String
 	client_name: String
 	properties: [Property] @hasMany
