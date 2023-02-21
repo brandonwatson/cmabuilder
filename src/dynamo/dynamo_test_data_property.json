@@ -1,9 +1,9 @@
 [
     {
-        "PK": {
+        "pk": {
             "S": "Property"
         },
-        "SK": {
+        "sk": {
             "S": "462 Shekel Ln##80424"
         },
         "above_grade": {
@@ -41,10 +41,10 @@
         }
     },
     {
-        "PK": {
+        "pk": {
             "S": "Property"
         },
-        "SK": {
+        "sk": {
             "S": "652 Silver Circle##80424"
         },
         "above_grade": {
@@ -82,10 +82,10 @@
         }
     },
     {
-        "PK": {
+        "pk": {
             "S": "Property"
         },
-        "SK": {
+        "sk": {
             "S": "245 Timberline Cir##80424"
         },
         "above_grade": {
@@ -123,10 +123,10 @@
         }
     },
     {
-        "PK": {
+        "pk": {
             "S": "Property"
         },
-        "SK": {
+        "sk": {
             "S": "627 Broken Lance Dr##80424"
         },
         "above_grade": {
@@ -164,10 +164,10 @@
         }
     },
     {
-        "PK": {
+        "pk": {
             "S": "Property"
         },
-        "SK": {
+        "sk": {
             "S": "133 Mountain View Dr##80424"
         },
         "above_grade": {
@@ -205,10 +205,10 @@
         }
     },
     {
-        "PK": {
+        "pk": {
             "S": "Property"
         },
-        "SK": {
+        "sk": {
             "S": "222 Silver Cir##80424"
         },
         "above_grade": {
@@ -246,10 +246,10 @@
         }
     },
     {
-        "PK": {
+        "pk": {
             "S": "Property"
         },
-        "SK": {
+        "sk": {
             "S": "17 Meadow Lark Green##80424"
         },
         "above_grade": {
@@ -287,10 +287,10 @@
         }
     },
     {
-        "PK": {
+        "pk": {
             "S": "Property"
         },
-        "SK": {
+        "sk": {
             "S": "5 Bonanza Trail##80424"
         },
         "above_grade": {
