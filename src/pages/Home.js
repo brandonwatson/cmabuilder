@@ -11,7 +11,7 @@ import { Button } from '@mui/material'
 
 //amplify imports
 import { DataStore } from 'aws-amplify'
-import { CMA, Property } from '../models/index'
+import { CMA, Property, PropertyCMAs } from '../models/index'
 
 //TEST DATA INIT
 import INIT_DATA from '../dynamo/amplify_init_data'
@@ -20,8 +20,6 @@ async function CreateNewCma(cma)
 {
     await DataStore.save(
         new CMA ({
-            pk: cma.pk,
-            sk: cma.sk
             })
         )
 }
@@ -29,68 +27,70 @@ async function CreateNewCma(cma)
 async function InitData(allProperties, user)
 {
     //This is sample data what will be removed
-    const listingProperty = allProperties.slice(0,1)
-    const compProperties = allProperties.slice(1)
+    const listingProperty = new Property (allProperties.slice(0,1)[0])
+    let compProperties = []
 
-    const targets = listingProperty.map(property => [property.pk, property.sk])
-    const comparables = compProperties.map(property => [property.pk, property.sk])
-    // console.log(targets[0])
-    // console.log(comparables)
-
-    const cma = {
-        pk: 'CMA',
-        sk: user.attributes.email + '#' + new Date(),
-        cma_label: allProperties[0]["sk"],
-        client_name: "Jenkins",
-        properties: targets[0],
-        comparables: comparables
+    for (let allPropCount=0; allPropCount < allProperties.slice(1).length; allPropCount++)
+    {
+        compProperties.push(new Property (allProperties.slice(1)[allPropCount]))
     }
 
-    // console.log(cma)
-    //create the objects here and then write to datastore
-    // for (let i=0; i < allProperties.length; i++)
-    // {
-    //     //console.log("inserting", allProperties[i].sk)
-    //     try {
-    //         await DataStore.save(
-    //             new Property ({
-    //                 "pk": allProperties[i].pk,
-    //                 "sk": allProperties[i].sk,
-    //                 "above_grade": allProperties[i].above_grade,
-    //                 "finished_basement_sqft": allProperties[i].finished_basement_sqft,
-    //                 "list_price": allProperties[i].list_price,
-    //                 "main_sqft": allProperties[i].main_sqft,
-    //                 "num_baths": allProperties[i].num_baths,
-    //                 "num_beds": allProperties[i].num_beds,
-    //                 "sale_price": allProperties[i].sale_price,
-    //                 "total_sqft": allProperties[i].total_sqft,
-    //                 "unfinished_basement_sqft": allProperties[i].unfinised_basement_sqft,
-    //                 "upper_sqft": allProperties[i].upper_sqft,
-    //                 "UUID": allProperties[i].uuid}
-    //             )
-    //         )
-    //         console.log("Success inserting propert");
-    //     } catch (error) {
-    //         console.log("Error saving property", error);
-    //     }
-    // }
-    // }
+    // const targets = listingProperty.map(property => [property.pk, property.sk])
+    // const comparables = compProperties.map(property => [property.pk, property.sk])
 
+    console.log("listingProperty:", listingProperty)
+    try
+    {
+        await DataStore.save(listingProperty)
+        console.log("inserted listing property: ", listingProperty)
+    }
+    catch (error)
+    {
+        console.log("error writing listing property: ", error)
+    }
+
+
+    console.log("commpProperties: ", compProperties)
+    for (let compPropCount=0; compPropCount < compProperties.length; compPropCount++)
+    {
+        try {
+            await DataStore.save(compProperties[compPropCount])
+            console.log("Success inserting propert");
+        } catch (error) {
+            console.log("Error saving property", error);
+        }
+    }
+
+    const cma = new CMA (
+        {
+            pk: user.attributes.email,
+            sk: new Date().toISOString(),
+            cma_label: listingProperty["pk"].slice(0, listingProperty["pk"].length-1),
+            property: listingProperty
+        }
+    )
+    
+    console.log("CMA: ", cma)
     try {
-        await DataStore.save(
-            new CMA ({
-                "pk": cma.pk,
-                "sk": cma.sk,
-                "cma_label": cma.cma_label,
-                "client_name": cma.client_name,
-                "properties": cma.properties,
-                "comparables": cma.comparables
-            })
-        )
+        await DataStore.save(cma)
         // console.log(cma.comparables)
         console.log("success inserting CMA")
     } catch (error) {
         console.log("error inserting CMA", error)
+    }
+
+    const propertyCma = new PropertyCMAs({
+            property: [compProperties],
+            cma: cma
+    })
+
+    console.log("propertyCma: ", propertyCma)
+    try {
+        await DataStore.save(propertyCma)
+        // console.log(cma.comparables)
+        console.log("success inserting PropertyCMAs")
+    } catch (error) {
+        console.log("error inserting PropertyCMAs", error)
     }
 }
 

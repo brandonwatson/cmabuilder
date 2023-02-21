@@ -30,11 +30,11 @@
       "function": {
         "cmabuilderPropertyRest": {
           "deploymentBucketName": "amplify-cmabuilder-dev-103708-deployment",
-          "s3Key": "amplify-builds/cmabuilderPropertyRest-55505271696362717a78-build.zip"
+          "s3Key": "amplify-builds/cmabuilderPropertyRest-357955494448496d6c55-build.zip"
         },
         "cmabuilderCMARest": {
           "deploymentBucketName": "amplify-cmabuilder-dev-103708-deployment",
-          "s3Key": "amplify-builds/cmabuilderCMARest-776545464d4441623638-build.zip"
+          "s3Key": "amplify-builds/cmabuilderCMARest-704b496d6b4761734364-build.zip"
         }
       },
       "api": {

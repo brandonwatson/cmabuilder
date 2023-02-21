@@ -3,13 +3,6 @@ export const schema = {
         "Property": {
             "name": "Property",
             "fields": {
-                "id": {
-                    "name": "id",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": true,
-                    "attributes": []
-                },
                 "pk": {
                     "name": "pk",
                     "isArray": false,
@@ -24,8 +17,8 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "num_beds": {
-                    "name": "num_beds",
+                "num_bed": {
+                    "name": "num_bed",
                     "isArray": false,
                     "type": "Float",
                     "isRequired": false,
@@ -94,6 +87,22 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "cmas": {
+                    "name": "cmas",
+                    "isArray": true,
+                    "type": {
+                        "model": "PropertyCMAs"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": [
+                            "property"
+                        ]
+                    }
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -109,34 +118,6 @@ export const schema = {
                     "isRequired": false,
                     "attributes": [],
                     "isReadOnly": true
-                },
-                "cMAPropertiesPk": {
-                    "name": "cMAPropertiesPk",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "cMAPropertiesSk": {
-                    "name": "cMAPropertiesSk",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "cMAComparablesPk": {
-                    "name": "cMAComparablesPk",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "cMAComparablesSk": {
-                    "name": "cMAComparablesSk",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
                 }
             },
             "syncable": true,
@@ -158,20 +139,24 @@ export const schema = {
                 {
                     "type": "key",
                     "properties": {
-                        "name": "gsi-CMA.properties",
+                        "name": "bySqftBySalePriceByBedByBath",
                         "fields": [
-                            "cMAPropertiesPk",
-                            "cMAPropertiesSk"
+                            "total_sqft",
+                            "sale_price",
+                            "num_bed",
+                            "num_bath"
                         ]
                     }
                 },
                 {
                     "type": "key",
                     "properties": {
-                        "name": "gsi-CMA.comparables",
+                        "name": "bySalePriceByTotalSqftByBedByBath",
                         "fields": [
-                            "cMAComparablesPk",
-                            "cMAComparablesSk"
+                            "sale_price",
+                            "total_sqft",
+                            "num_bed",
+                            "num_bath"
                         ]
                     }
                 },
@@ -252,28 +237,11 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "properties": {
-                    "name": "properties",
-                    "isArray": true,
-                    "type": {
-                        "model": "Property"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "isArrayNullable": true,
-                    "association": {
-                        "connectionType": "HAS_MANY",
-                        "associatedWith": [
-                            "cMAPropertiesPk",
-                            "cMAPropertiesSk"
-                        ]
-                    }
-                },
                 "comparables": {
                     "name": "comparables",
                     "isArray": true,
                     "type": {
-                        "model": "Property"
+                        "model": "PropertyCMAs"
                     },
                     "isRequired": false,
                     "attributes": [],
@@ -281,8 +249,7 @@ export const schema = {
                     "association": {
                         "connectionType": "HAS_MANY",
                         "associatedWith": [
-                            "cMAComparablesPk",
-                            "cMAComparablesSk"
+                            "cma"
                         ]
                     }
                 },
@@ -315,6 +282,16 @@ export const schema = {
                     "properties": {
                         "fields": [
                             "pk",
+                            "sk"
+                        ]
+                    }
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byClientByDate",
+                        "fields": [
+                            "client_name",
                             "sk"
                         ]
                     }
@@ -353,10 +330,126 @@ export const schema = {
                     }
                 }
             ]
+        },
+        "PropertyCMAs": {
+            "name": "PropertyCMAs",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "propertyPk": {
+                    "name": "propertyPk",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "propertysk": {
+                    "name": "propertysk",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "cMAPk": {
+                    "name": "cMAPk",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "cMAsk": {
+                    "name": "cMAsk",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "property": {
+                    "name": "property",
+                    "isArray": false,
+                    "type": {
+                        "model": "Property"
+                    },
+                    "isRequired": true,
+                    "attributes": [],
+                    "association": {
+                        "connectionType": "BELONGS_TO",
+                        "targetNames": [
+                            "propertyPk",
+                            "propertysk"
+                        ]
+                    }
+                },
+                "cma": {
+                    "name": "cma",
+                    "isArray": false,
+                    "type": {
+                        "model": "CMA"
+                    },
+                    "isRequired": true,
+                    "attributes": [],
+                    "association": {
+                        "connectionType": "BELONGS_TO",
+                        "targetNames": [
+                            "cMAPk",
+                            "cMAsk"
+                        ]
+                    }
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                }
+            },
+            "syncable": true,
+            "pluralName": "PropertyCMAs",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byProperty",
+                        "fields": [
+                            "propertyPk",
+                            "propertysk"
+                        ]
+                    }
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byCMA",
+                        "fields": [
+                            "cMAPk",
+                            "cMAsk"
+                        ]
+                    }
+                }
+            ]
         }
     },
     "enums": {},
     "nonModels": {},
     "codegenVersion": "3.3.5",
-    "version": "66fe5209560ac2f08c1fc2a3841b8885"
+    "version": "f18c6bcae06421ee6f46f440ab10bee7"
 };

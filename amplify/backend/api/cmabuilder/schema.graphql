@@ -15,20 +15,21 @@ type Property
 			{ allow: groups, groups: ["Users"], operations: [read] }
 			{ allow: owner }
 		]
-	) {
-	pk: String! @primaryKey(sortKeyFields: ["sk"]) #pk will always be "Property"
-	sk: String! #sk will be made up of "add1#add2#zip"
-	num_beds: Float
+	)
+	{
+	pk: String! @primaryKey(sortKeyFields: ["sk"]) #pk will be made up of [add1]#[add2]
+	sk: String! #sk will be made up of [zip]
+	num_bed: Float
 	num_bath: Float
-	total_sqft: Int
+	total_sqft: Int @index(name: "bySqftBySalePriceByBedByBath", sortKeyFields: ["sale_price", "num_bed", "num_bath"])
 	above_grade_sqft: Int
 	upper_sqft: Int
 	main_sqft: Int
 	fininshed_basement_sqft: Int
 	unfininshed_basement_sqft: Int
 	list_price: Int
-	sale_price: Int
-	id: ID!
+	sale_price: Int @index(name: "bySalePriceByTotalSqftByBedByBath", sortKeyFields: ["total_sqft", "num_bed", "num_bath"])
+	cmas: [CMA] @manyToMany(relationName: "PropertyCMAs")
 }
 
 type CMA
@@ -42,11 +43,12 @@ type CMA
 			}
 			{ allow: owner }
 		]
-	) {
-	pk: String! @primaryKey(sortKeyFields: ["sk"]) #pk will always be "CMA"
-	sk: String! #sk will be composed of created_by#created_at (user email since we use email for login)
-	cma_label: String
-	client_name: String
-	properties: [Property] @hasMany
-	comparables: [Property] @hasMany
+	)
+	{
+	pk: String! @primaryKey(sortKeyFields: ["sk"]) #pk will be created_by email (used for login)
+	sk: String! #sk will be composed of created_at
+	cma_label: String #this is a friendly name
+	client_name: String @index(name:"byClientByDate", sortKeyFields: ["sk"])
+	property: Property
+	comparables: [Property] @manyToMany(relationName: "PropertyCMAs")
 }
